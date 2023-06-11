@@ -1,0 +1,22 @@
+import React from "react";
+import './ItemList.css'
+import Item from './Item/Item'
+
+import Header from "../Header/Header";
+const ItemList = ({ products, category }) => {
+  return (
+    <>
+      <Header showAs="Shadow" />
+      <h1 className="products__path">Shop</h1>
+
+      <div className="products">
+        {products &&
+          products.map((product) => {
+            return <Item key={product.id} product={product} />;
+          })}
+      </div>
+    </>
+  );
+};
+
+export default ItemList;
